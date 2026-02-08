@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokedle</title>
+</head>
+<body>
+    <h1>Pokedle</h1>
+
+    <p id="result"></p>
+
+    <button onclick = "randomPick()">Computer Guess</button><br>
+
+    <img src="" alt="Pokemon Sprite" id="pokemonSprite" style="display: none"><br>
+
+
+    <input type="text" id="guess" placeholder="Enter Pokemon">
+    <button onclick = "compare(`guess`)">Guess</button>
+
+    <div id="history"></div>
+
+    <script src ="pokedle.js"></script>
+    
+</body>
+</html>
