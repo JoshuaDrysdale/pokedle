@@ -111,6 +111,13 @@ function generateSprite(){
 
 }
 
+function generateWrongSprite(pokemon,row){
+    const img = row.querySelector("img");
+    img.src = pokemon.sprites.front_default;
+    img.style.display = "block";
+
+}
+
 async function compare(userInput){
     const result = document.getElementById("result");
     const input = document.getElementById(userInput);
@@ -181,13 +188,17 @@ async function compare(userInput){
     const row = document.createElement("div");
     row.className = "guess";
     row.innerHTML = `
-        <img src="${userPkmn.sprites.front_default}" alt="${userPkmn.name} sprite" style="width: 100px; height: 100px;">
+        <img src="" alt="Pokemon Sprite" style="display: none; width: 80px;">
         <p>${heightText}</p>
         <p>${typeText}</p>
         <p>${genText}</p>
         <p>${regionText}</p>
         <hr>
     `;
+
+    if(!correct){
+        generateWrongSprite(userPkmn,row);
+    }
 
     history.prepend(row);
 
@@ -198,3 +209,4 @@ async function compare(userInput){
 
 
 }
+
